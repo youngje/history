@@ -48,7 +48,7 @@ const createBrowserHistory = (props = {}) => {
   } = props
 
   const getDOMLocation = (historyState) => {
-    const { key, state } = (historyState || {})
+    const { key = createKey(), state } = (historyState || {})
     const { pathname, search, hash } = window.location
 
     let path = pathname + search + hash
